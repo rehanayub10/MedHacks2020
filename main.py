@@ -1,8 +1,14 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+from pathlib import Path
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 url = 'https://api.webempath.net/v2/analyzeWav'
 
-apikey = 'beCDBTXWx4-u4NL_i1PDBrvGyGdzBCwTwAu4w-fxfCk'
+apikey = os.getenv("API_KEY")
 payload = {'apikey': apikey}
 
 wav = "./audio/sad-sample.wav"
