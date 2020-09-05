@@ -17,6 +17,6 @@ pip install --upgrade "ibm-watson>=4.6.0"
 Copy Paste your API key from Tone Analyzer website using IAM after creating a new project:
 
 ```
-{api_key}='YOUR API KEY'
-{url}='URL COPIED FROM YOUR PROJECT WEBSITE'
+{api_key} = 'YOUR API KEY'
+{url} = 'URL COPIED FROM YOUR PROJECT WEBSITE'
 ```
