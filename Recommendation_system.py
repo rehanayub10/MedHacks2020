@@ -5,12 +5,12 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 # All the Backend Stuff
 version='2020-09-05'
-authenticator = IAMAuthenticator('Koiz6SDn9oG82iXIFi-IimRPcKb0ar302KZ7fnsHRzql')
+authenticator = IAMAuthenticator({api-key})
 tone_analyzer = ToneAnalyzerV3(
     version=version,
     authenticator=authenticator
 )
-tone_analyzer.set_service_url('https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/216cbdf1-ee0e-4eea-90da-592042bf347b')
+tone_analyzer.set_service_url({url})
 
 # Text Input from the aggregate of the UI
 text="Hated you"
