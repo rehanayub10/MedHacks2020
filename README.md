@@ -20,3 +20,13 @@ Copy Paste your API key from Tone Analyzer website using IAM after creating a ne
 {api_key} = 'YOUR API KEY'
 {url} = 'URL COPIED FROM YOUR PROJECT WEBSITE'
 ```
+To install Google Speech to text API
+
+```
+pip install --upgrade google-cloud-speech
+```
+To install Google Text to Speech API
+
+```
+pip install --upgrade google-cloud-texttospeech
+```
