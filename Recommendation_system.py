@@ -34,5 +34,4 @@ if score:
     index=score.index(max(score))
     print("Strongest emotion: %s" %emotion[index])
 
-print(score,emotion)
-print(emotion[index])
+
