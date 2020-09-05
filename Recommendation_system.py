@@ -5,15 +5,15 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 # All the Backend Stuff
 version='2020-09-05'
-authenticator = IAMAuthenticator({api-key})
+authenticator = IAMAuthenticator('Koiz6SDn9oG82iXIFi-IimRPcKb0ar302KZ7fnsHRzql')
 tone_analyzer = ToneAnalyzerV3(
     version=version,
     authenticator=authenticator
 )
-tone_analyzer.set_service_url({url})
+tone_analyzer.set_service_url('https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/216cbdf1-ee0e-4eea-90da-592042bf347b')
 
 # Text Input from the aggregate of the UI
-text="Hated you"
+text="i am sooo confused"
 
 # Running the tone analysis on the Text Input
 tone_analysis = tone_analyzer.tone(
@@ -33,3 +33,6 @@ print(score,emotion)
 if score:
     index=score.index(max(score))
     print("Strongest emotion: %s" %emotion[index])
+
+print(score,emotion)
+print(emotion[index])

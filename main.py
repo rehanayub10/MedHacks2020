@@ -1,27 +1,27 @@
-import requests
-import os
-from dotenv import load_dotenv
+from typing import Optional
+from fastapi import FastAPI
+from empath import res
+from Recommendation_system import score,emotion,index
+import json
 
-from pathlib import Path
-env_path = Path('.') / '.env'
-load_dotenv(dotenv_path=env_path)
+resBody = res.json()
 
-url = 'https://api.webempath.net/v2/analyzeWav'
+app = FastAPI()
 
-apikey = os.getenv("API_KEY")
-payload = {'apikey': apikey}
+@app.get("/voice/{voice_type}")
+def read_item(voice_type: str, q: Optional[str] = None):
+    return {
+        "calm": resBody.get('calm'), 
+        "anger": resBody.get('anger'),
+        "joy": resBody.get('joy'),
+        "sorrow": resBody.get('sorrow'), 
+        "energy": resBody.get('energy'),
+        }
 
-wav = "./audio/sad-sample.wav"
-data = open(wav, 'rb')
-audioFile = {'wav' : data}
-
-res = requests.post(url, params=payload, files=audioFile)
-print(res.json())
-
-# Results (not very accurate lol):
-# For happy:
-# {'error': 0, 'calm': 17, 'anger': 30, 'joy': 1, 'sorrow': 0, 'energy': 31}
-# Angry:
-# {'error': 0, 'calm': 33, 'anger': 13, 'joy': 0, 'sorrow': 3, 'energy': 10}
-# Sad
-# {'error': 0, 'calm': 38, 'anger': 4, 'joy': 7, 'sorrow': 0, 'energy': 11}
+@app.get("/emotion/{emotion_type}")
+def read_item(emotion_type: str, q: Optional[str] = None):
+    return {
+        "scores": score,
+        "emotions": emotion,
+        "dominantEmotion": emotion[index]
+        }
