@@ -8,12 +8,12 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 client = texttospeech.TextToSpeechClient()
 
 # Set the text input to be synthesized
-synthesis_input = texttospeech.SynthesisInput(text="Welcome to Mealth! How's your day going? How can I hlep you?")
+synthesis_input = texttospeech.SynthesisInput(text="I feel like a burden. I feel lonely. I’m not doing very well. I miss my family. ")
 
 # Build the voice request, select the language code ("en-US") and the ssml
 # voice gender ("neutral")
 voice = texttospeech.VoiceSelectionParams(
-    language_code="en-US", ssml_gender=texttospeech.SsmlVoiceGender.NEUTRAL
+    language_code="en-UK", ssml_gender=texttospeech.SsmlVoiceGender.FEMALE
 )
 
 # Select the type of audio file you want returned
@@ -28,7 +28,7 @@ response = client.synthesize_speech(
 )
 # See if there's a way to integrate the response directly
 # The response's audio_content is binary.
-with open("test-out.mp3", "wb") as out:
+with open("alexa1.mp3", "wb") as out:
     # Write the response to the output file.
     out.write(response.audio_content)
     print('Audio content written to file "output.mp3"')

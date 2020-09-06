@@ -1,4 +1,4 @@
-import numpy as np
+
 
 depression = {"1":"You seem to be handling yourself well. I would recommend a form of artistic expression. Some ideas are journaling, drawing, listening to music, or writing poetry. Also, you can reach out to family and close friends for emotional support.",
               "2a":"You are in a tough spot. A great way to combat sadness is regular exercise. Given your mobility level, I would recommend light stretching daily. Also, you can reach out to family and close friends for emotional support.",
@@ -80,5 +80,13 @@ def final_rec(mobility, emotion, scores, responses):
     else:
         response = "You seem to be doing well! Keep up the good job!"
 
-    return response;
+    return response,av_score;
+
+emotion='sad';
+scores=[0.75,0.65,0.65,0.75,0.2];
+responses=['sad','sad','sad','sad','sad'];
+
+a,b=final_rec('limited',emotion,scores,responses);
+print(a)
+print(b)
 
