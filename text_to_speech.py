@@ -8,7 +8,7 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 client = texttospeech.TextToSpeechClient()
 
 # Set the text input to be synthesized
-synthesis_input = texttospeech.SynthesisInput(text="How are you doing today?")
+synthesis_input = texttospeech.SynthesisInput(text="Welcome to Mealth! How's your day going? How can I hlep you?")
 
 # Build the voice request, select the language code ("en-US") and the ssml
 # voice gender ("neutral")
