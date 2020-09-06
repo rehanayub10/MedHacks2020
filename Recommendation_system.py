@@ -13,7 +13,7 @@ tone_analyzer = ToneAnalyzerV3(
 tone_analyzer.set_service_url('https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/216cbdf1-ee0e-4eea-90da-592042bf347b')
 
 # Text Input from the aggregate of the UI
-text="i am sooo confused"
+text="My day was bad"
 
 # Running the tone analysis on the Text Input
 tone_analysis = tone_analyzer.tone(
@@ -34,5 +34,4 @@ if score:
     index=score.index(max(score))
     print("Strongest emotion: %s" %emotion[index])
 
-print(score,emotion)
-print(emotion[index])
+
